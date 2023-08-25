@@ -1,0 +1,9 @@
+import boto3
+def launchOS():
+    launch = boto3.client("ec2")
+    info_os=launch.run_instances(
+    ImageId='ami-0ded8326293d3201b',
+    InstanceType='t2.micro',
+    MaxCount=1,
+    MinCount=1
+    )
